@@ -107,6 +107,7 @@ func (source *Source) Save() error {
 	}
 
 	// Save targets to output file.
+	log.Printf("Saving: %s", source.factory.filename)
 	err = safefile.WriteFile(source.factory.filename, data, 0644)
 	if err != nil {
 		log.Printf("Failed to write %s: %s", source.factory.filename, err)
